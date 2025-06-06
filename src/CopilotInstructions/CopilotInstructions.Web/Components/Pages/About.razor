@@ -3,41 +3,194 @@
 
 <PageTitle>About</PageTitle>
 
-<MudText Typo="Typo.h3" GutterBottom="true">About Copilot Custom Instructions</MudText>
+<MudContainer MaxWidth="MaxWidth.Large" Class="mt-8">
+    <MudPaper Elevation="0" Class="pa-8 mb-8" Style="background: linear-gradient(135deg, var(--mud-palette-secondary-lighten) 0%, var(--mud-palette-secondary) 100%); border-radius: 16px;">
+        <MudText Typo="Typo.h2" Align="Align.Center" Color="Color.Surface" Class="fw-bold">About Copilot Custom Instructions</MudText>
+        <MudText Typo="Typo.h5" Align="Align.Center" Color="Color.Surface" Class="mb-8">Empowering developers to harness the full potential of AI assistance</MudText>
+        <MudText Align="Align.Center" Color="Color.Surface">
+            A community-driven library of effective GitHub Copilot custom instructions to enhance 
+            coding productivity and improve AI-assisted development across various languages, 
+            frameworks, and scenarios.
+        </MudText>
+    </MudPaper>
+    
+    <MudText Typo="Typo.h4" Align="Align.Center" Class="mb-4">Our Mission</MudText>
+    <MudText Typo="Typo.body1" Align="Align.Center" Class="mb-8">Helping developers write better code through shared AI expertise</MudText>
+    
+    <MudGrid Class="mb-8">
+        <MudItem xs="12" sm="6" md="4">
+            <MudCard Elevation="4">
+                <MudCardHeader>
+                    <CardHeaderAvatar>
+                        <MudAvatar Color="Color.Primary" Size="Size.Large">
+                            <MudIcon Icon="@Icons.Material.Filled.Lightbulb" />
+                        </MudAvatar>
+                    </CardHeaderAvatar>
+                    <CardHeaderContent>
+                        <MudText Typo="Typo.h6">Empower Developers</MudText>
+                    </CardHeaderContent>
+                </MudCardHeader>
+                <MudCardContent>
+                    <MudText>
+                        Help developers of all skill levels unlock the full potential of GitHub Copilot through optimized custom instructions.
+                    </MudText>
+                </MudCardContent>
+            </MudCard>
+        </MudItem>
+        
+        <MudItem xs="12" sm="6" md="4">
+            <MudCard Elevation="4">
+                <MudCardHeader>
+                    <CardHeaderAvatar>
+                        <MudAvatar Color="Color.Secondary" Size="Size.Large">
+                            <MudIcon Icon="@Icons.Material.Filled.Groups" />
+                        </MudAvatar>
+                    </CardHeaderAvatar>
+                    <CardHeaderContent>
+                        <MudText Typo="Typo.h6">Build Community</MudText>
+                    </CardHeaderContent>
+                </MudCardHeader>
+                <MudCardContent>
+                    <MudText>
+                        Foster a collaborative space where developers can share, discover, and refine AI prompting techniques.
+                    </MudText>
+                </MudCardContent>
+            </MudCard>
+        </MudItem>
+        
+        <MudItem xs="12" sm="6" md="4">
+            <MudCard Elevation="4">
+                <MudCardHeader>
+                    <CardHeaderAvatar>
+                        <MudAvatar Color="Color.Tertiary" Size="Size.Large">
+                            <MudIcon Icon="@Icons.Material.Filled.Rocket" />
+                        </MudAvatar>
+                    </CardHeaderAvatar>
+                    <CardHeaderContent>
+                        <MudText Typo="Typo.h6">Accelerate Innovation</MudText>
+                    </CardHeaderContent>
+                </MudCardHeader>
+                <MudCardContent>
+                    <MudText>
+                        Increase development velocity across the industry by enhancing how we work with AI coding assistants.
+                    </MudText>
+                </MudCardContent>
+            </MudCard>
+        </MudItem>
+    </MudGrid>
+    
+    <MudText Typo="Typo.h4" Align="Align.Center" Class="mb-4">The Creator</MudText>
+    
+    <MudPaper Elevation="2" Class="pa-6 mb-8" Style="border-radius: 16px;">
+        <div class="text-center mb-4">
+            <div class="creator-avatar-container">
+                <MudAvatar Class="creator-avatar" Elevation="4">
+                    <img src="https://avatars.githubusercontent.com/u/2757486?v=4" alt="Emanuele Bartolesi" />
+                </MudAvatar>
+            </div>
+        </div>
+        
+        <MudText Typo="Typo.h5" Align="Align.Center" Class="mb-2">Emanuele Bartolesi</MudText>
+        <div class="d-flex justify-center mb-4">
+            <MudIcon Icon="@Icons.Custom.Brands.GitHub" Size="Size.Small" Class="mr-1" />
+            <MudLink Href="https://github.com/kasuken" Target="_blank" Color="Color.Primary">kasuken</MudLink>
+        </div>
+        
+        <MudText Typo="Typo.body1" Align="Align.Center" Class="mb-4">
+            Passionate about developer productivity and AI-assisted coding, Emanuele created this project 
+            to help the community maximize their experience with GitHub Copilot. As a developer and technology 
+            enthusiast, he believes in the power of shared knowledge to elevate everyone's coding capabilities.
+        </MudText>
+        
+        <div class="d-flex justify-center flex-wrap">
+            <MudButton Variant="Variant.Outlined" 
+                    Color="Color.Primary"
+                    Target="_blank"
+                    Href="https://github.com/kasuken"
+                    StartIcon="@Icons.Custom.Brands.GitHub"
+                    Class="ma-1">
+                GitHub
+            </MudButton>
+            
+            <MudButton Variant="Variant.Outlined" 
+                    Color="Color.Primary"
+                    Target="_blank"
+                    Href="https://twitter.com/kasuken"
+                    StartIcon="@Icons.Custom.Brands.Twitter"
+                    Class="ma-1">
+                Twitter
+            </MudButton>
+            
+            <MudButton Variant="Variant.Outlined" 
+                    Color="Color.Primary"
+                    Target="_blank"
+                    Href="https://www.linkedin.com/in/bartolesiemanuele/"
+                    StartIcon="@Icons.Custom.Brands.LinkedIn"
+                    Class="ma-1">
+                LinkedIn
+            </MudButton>
+            
+            <MudButton Variant="Variant.Outlined" 
+                    Color="Color.Primary"
+                    Target="_blank"
+                    Href="https://www.emanuelebartolesi.com/"
+                    StartIcon="@Icons.Material.Filled.Language"
+                    Class="ma-1">
+                Website
+            </MudButton>
+        </div>
+    </MudPaper>
+    
+    <MudPaper Elevation="3" Class="pa-8 text-center mb-8" Style="background: linear-gradient(135deg, var(--mud-palette-tertiary-lighten) 0%, var(--mud-palette-tertiary) 100%); border-radius: 16px;">
+        <MudText Typo="Typo.h4" Color="Color.Surface" Class="mb-4">Ready to Get Started?</MudText>
+        <MudText Color="Color.Surface" Class="mb-6">
+            Explore our collection of custom instructions and start enhancing your GitHub Copilot experience today.
+        </MudText>
+        
+        <div class="d-flex justify-center flex-wrap">
+            <MudButton Variant="Variant.Filled" Color="Color.Dark" Size="Size.Large" 
+                       Href="/"
+                       StartIcon="@Icons.Material.Filled.Home"
+                       Class="ma-1">
+                View Instructions
+            </MudButton>
+            
+            <MudButton Variant="Variant.Filled" Color="Color.Primary" Size="Size.Large" 
+                       Target="_blank"
+                       Href="https://github.com/kasuken/copilotinstructions"
+                       StartIcon="@Icons.Custom.Brands.GitHub"
+                       Class="ma-1">
+                GitHub Repository
+            </MudButton>
+            
+            <MudButton Variant="Variant.Filled" Color="Color.Secondary" Size="Size.Large" 
+                       Href="/contributing"
+                       StartIcon="@Icons.Material.Filled.Handshake"
+                       Class="ma-1">
+                Contribute
+            </MudButton>
+        </div>
+    </MudPaper>
+</MudContainer>
 
-<MudPaper Elevation="3" Class="pa-4 mt-6 mb-6" Style="max-width: 800px">
-    <MudText Typo="Typo.body1" Class="mb-4">
-        This project aims to provide a community-driven library of useful custom instructions for GitHub Copilot.
-    </MudText>
+<style>
+    .creator-avatar-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
     
-    <MudText Typo="Typo.h5" Class="mt-4">Our Mission</MudText>
-    <MudText Typo="Typo.body1" Class="mb-4">
-        To help developers get the most out of GitHub Copilot by sharing effective custom instructions that enhance AI code assistance across different programming languages, frameworks, and scenarios.
-    </MudText>
+    .creator-avatar {
+        width: 180px;
+        height: 180px;
+        font-size: 2rem;
+        overflow: hidden;
+    }
     
-    <MudText Typo="Typo.h5" Class="mt-4">The Team</MudText>
-    <MudText Typo="Typo.body1" Class="mb-4">
-        This is an open-source community project. Contributors welcome!
-    </MudText>
-    
-    <MudText Typo="Typo.h5" Class="mt-4">Contact</MudText>
-    <MudText Typo="Typo.body1" Class="mb-4">
-        For questions, suggestions, or feedback, please open an issue in our GitHub repository.
-    </MudText>
-    
-    <MudButton Variant="Variant.Filled" 
-               Color="Color.Primary" 
-               Target="_blank"
-               Href="https://github.com/kasuken/copilotinstructions"
-               StartIcon="@Icons.Custom.Brands.GitHub"
-               Class="mr-3">
-        GitHub Repository
-    </MudButton>
-    
-    <MudButton Variant="Variant.Filled" 
-               Color="Color.Primary"
-               Href="/"
-               StartIcon="@Icons.Material.Filled.ArrowBack">
-        Back to Home
-    </MudButton>
-</MudPaper>
+    .creator-avatar img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+</style>
