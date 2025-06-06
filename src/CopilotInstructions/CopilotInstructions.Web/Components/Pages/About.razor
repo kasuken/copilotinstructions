@@ -1,0 +1,43 @@
+@page "/about"
+@rendermode InteractiveServer
+
+<PageTitle>About</PageTitle>
+
+<MudText Typo="Typo.h3" GutterBottom="true">About Copilot Custom Instructions</MudText>
+
+<MudPaper Elevation="3" Class="pa-4 mt-6 mb-6" Style="max-width: 800px">
+    <MudText Typo="Typo.body1" Class="mb-4">
+        This project aims to provide a community-driven library of useful custom instructions for GitHub Copilot.
+    </MudText>
+    
+    <MudText Typo="Typo.h5" Class="mt-4">Our Mission</MudText>
+    <MudText Typo="Typo.body1" Class="mb-4">
+        To help developers get the most out of GitHub Copilot by sharing effective custom instructions that enhance AI code assistance across different programming languages, frameworks, and scenarios.
+    </MudText>
+    
+    <MudText Typo="Typo.h5" Class="mt-4">The Team</MudText>
+    <MudText Typo="Typo.body1" Class="mb-4">
+        This is an open-source community project. Contributors welcome!
+    </MudText>
+    
+    <MudText Typo="Typo.h5" Class="mt-4">Contact</MudText>
+    <MudText Typo="Typo.body1" Class="mb-4">
+        For questions, suggestions, or feedback, please open an issue in our GitHub repository.
+    </MudText>
+    
+    <MudButton Variant="Variant.Filled" 
+               Color="Color.Primary" 
+               Target="_blank"
+               Href="https://github.com/kasuken/copilotinstructions"
+               StartIcon="@Icons.Custom.Brands.GitHub"
+               Class="mr-3">
+        GitHub Repository
+    </MudButton>
+    
+    <MudButton Variant="Variant.Filled" 
+               Color="Color.Primary"
+               Href="/"
+               StartIcon="@Icons.Material.Filled.ArrowBack">
+        Back to Home
+    </MudButton>
+</MudPaper>

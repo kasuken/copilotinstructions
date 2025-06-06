@@ -1,0 +1,275 @@
+@page "/contributing"
+@rendermode InteractiveServer
+
+<PageTitle>Contributing</PageTitle>
+
+<!-- Hero Section -->
+<div class="mud-container mud-container-maxwidth-lg mt-8 mb-16 px-8">
+    <div class="mud-paper mud-elevation-0 pa-8" style="background: linear-gradient(135deg, var(--mud-palette-primary-lighten) 0%, var(--mud-palette-primary) 100%); border-radius: 16px;">
+        <MudText Typo="Typo.h2" Align="Align.Center" Color="Color.Surface" Class="fw-bold">Join Our Community</MudText>
+        <MudText Typo="Typo.h5" Align="Align.Center" Color="Color.Surface" Class="mb-8">Help shape the future of AI-powered coding</MudText>
+        
+        <div class="mud-grid d-flex justify-center">
+            <div class="mud-grid-item mud-grid-item-xs-12 mud-grid-item-sm-8 mud-grid-item-md-6">
+                <MudText Align="Align.Center" Color="Color.Surface">
+                    The Copilot Instructions project thrives on community contributions. Whether you're sharing 
+                    your own custom instructions, improving documentation, or enhancing the application - your 
+                    help makes a difference!
+                </MudText>
+            </div>
+        </div>
+        
+        <div class="d-flex justify-center mt-6">
+            <MudButton Variant="Variant.Filled" Color="Color.Dark" Size="Size.Large" 
+                       Target="_blank"
+                       Href="https://github.com/kasuken/copilotinstructions"
+                       StartIcon="@Icons.Custom.Brands.GitHub">
+                Join on GitHub
+            </MudButton>
+        </div>
+    </div>
+</div>
+
+<!-- Ways to Contribute Section -->
+<div class="mud-container mud-container-maxwidth-lg mb-16 px-8">
+    <MudText Typo="Typo.h4" Align="Align.Center" Class="mb-2">Ways to Contribute</MudText>
+    <MudText Typo="Typo.body1" Align="Align.Center" Class="mb-10">Find the perfect way to contribute based on your skills and interests</MudText>
+    
+    <div class="mud-grid">
+        <!-- Share Instructions -->
+        <div class="mud-grid-item mud-grid-item-xs-12 mud-grid-item-sm-6 mud-grid-item-md-4">
+            <MudCard Elevation="4" Class="h-100">
+                <MudCardHeader>
+                    <CardHeaderAvatar>
+                        <MudAvatar Color="Color.Primary" Size="Size.Large">
+                            <MudIcon Icon="@Icons.Material.Filled.Lightbulb" />
+                        </MudAvatar>
+                    </CardHeaderAvatar>
+                    <CardHeaderContent>
+                        <MudText Typo="Typo.h6">Share Instructions</MudText>
+                        <MudText Typo="Typo.body2">Beginner-friendly</MudText>
+                    </CardHeaderContent>
+                </MudCardHeader>
+                <MudCardContent>
+                    <MudText>
+                        Share your Custom Instructions that help Copilot generate better code. Great for anyone who uses GitHub Copilot!
+                    </MudText>
+                </MudCardContent>
+                <MudCardActions>
+                    <MudButton Variant="Variant.Text" Color="Color.Primary" Href="/add">Learn More</MudButton>
+                </MudCardActions>
+            </MudCard>
+        </div>
+        
+        <!-- Improve Docs -->
+        <div class="mud-grid-item mud-grid-item-xs-12 mud-grid-item-sm-6 mud-grid-item-md-4">
+            <MudCard Elevation="4" Class="h-100">
+                <MudCardHeader>
+                    <CardHeaderAvatar>
+                        <MudAvatar Color="Color.Secondary" Size="Size.Large">
+                            <MudIcon Icon="@Icons.Material.Filled.MenuBook" />
+                        </MudAvatar>
+                    </CardHeaderAvatar>
+                    <CardHeaderContent>
+                        <MudText Typo="Typo.h6">Improve Documentation</MudText>
+                        <MudText Typo="Typo.body2">Beginner-friendly</MudText>
+                    </CardHeaderContent>
+                </MudCardHeader>
+                <MudCardContent>
+                    <MudText>
+                        Help improve our documentation, fix typos, clarify instructions, or add examples to make things clearer for everyone.
+                    </MudText>
+                </MudCardContent>
+                <MudCardActions>
+                    <MudButton Variant="Variant.Text" Color="Color.Secondary" 
+                               Href="https://github.com/kasuken/copilotinstructions/blob/main/README.md" 
+                               Target="_blank">View Docs</MudButton>
+                </MudCardActions>
+            </MudCard>
+        </div>
+        
+        <!-- Code Contributions -->
+        <div class="mud-grid-item mud-grid-item-xs-12 mud-grid-item-sm-6 mud-grid-item-md-4">
+            <MudCard Elevation="4" Class="h-100">
+                <MudCardHeader>
+                    <CardHeaderAvatar>
+                        <MudAvatar Color="Color.Tertiary" Size="Size.Large">
+                            <MudIcon Icon="@Icons.Material.Filled.Code" />
+                        </MudAvatar>
+                    </CardHeaderAvatar>
+                    <CardHeaderContent>
+                        <MudText Typo="Typo.h6">Code Contributions</MudText>
+                        <MudText Typo="Typo.body2">Intermediate/Advanced</MudText>
+                    </CardHeaderContent>
+                </MudCardHeader>
+                <MudCardContent>
+                    <MudText>
+                        Help improve the application by fixing bugs, adding new features, or optimizing existing code using your .NET skills.
+                    </MudText>
+                </MudCardContent>
+                <MudCardActions>
+                    <MudButton Variant="Variant.Text" Color="Color.Tertiary" 
+                               Href="https://github.com/kasuken/copilotinstructions/issues" 
+                               Target="_blank">Find Issues</MudButton>
+                </MudCardActions>
+            </MudCard>
+        </div>
+    </div>
+</div>
+
+<!-- Contribution Process -->
+<div class="mud-container mud-container-maxwidth-lg mb-16 px-8">
+    <MudText Typo="Typo.h4" Align="Align.Center" Class="mb-2">Contribution Process</MudText>
+    <MudText Typo="Typo.body1" Align="Align.Center" Class="mb-10">Follow these steps to contribute to the project</MudText>
+    
+    <div class="mud-paper pa-6 mud-elevation-3">
+        <MudTimeline TimelinePosition="TimelinePosition.Left">
+            <MudTimelineItem Color="Color.Primary" Size="Size.Medium" Icon="@Icons.Custom.Brands.GitHub">
+                <MudText Typo="Typo.h6" Color="Color.Primary">Fork the Repository</MudText>
+                <MudText Typo="Typo.body1" Class="mb-4">
+                    Start by forking the <MudLink Href="https://github.com/kasuken/copilotinstructions" Target="_blank">GitHub repository</MudLink> to your own account.
+                </MudText>
+            </MudTimelineItem>
+            
+            <MudTimelineItem Color="Color.Secondary" Size="Size.Medium" Icon="@Icons.Material.Filled.BugReport">
+                <MudText Typo="Typo.h6" Color="Color.Secondary">Find or Create an Issue</MudText>
+                <MudText Typo="Typo.body1" Class="mb-4">
+                    Look for existing issues or create a new one to document the problem or feature you want to work on.
+                </MudText>
+            </MudTimelineItem>
+            
+            <MudTimelineItem Color="Color.Info" Size="Size.Medium" Icon="@Icons.Material.Filled.Code">
+                <MudText Typo="Typo.h6" Color="Color.Info">Make Your Changes</MudText>
+                <MudText Typo="Typo.body1" Class="mb-4">
+                    Create a branch, make your changes, ensuring they follow the project's coding standards.
+                </MudText>
+            </MudTimelineItem>
+            
+            <MudTimelineItem Color="Color.Success" Size="Size.Medium" Icon="@Icons.Material.Filled.Send">
+                <MudText Typo="Typo.h6" Color="Color.Success">Submit a Pull Request</MudText>
+                <MudText Typo="Typo.body1" Class="mb-4">
+                    Open a pull request with a clear description of the changes and reference any related issues.
+                </MudText>
+            </MudTimelineItem>
+            
+            <MudTimelineItem Color="Color.Warning" Size="Size.Medium" Icon="@Icons.Material.Filled.Comment">
+                <MudText Typo="Typo.h6" Color="Color.Warning">Code Review</MudText>
+                <MudText Typo="Typo.body1" Class="mb-4">
+                    Project maintainers will review your code, suggest changes if needed, and discuss your implementation.
+                </MudText>
+            </MudTimelineItem>
+            
+            <MudTimelineItem Color="Color.Dark" Size="Size.Medium" Icon="@Icons.Material.Filled.Merge">
+                <MudText Typo="Typo.h6">Merge</MudText>
+                <MudText Typo="Typo.body1" Class="mb-4">
+                    Once approved, your changes will be merged into the main project. Congratulations on becoming a contributor!
+                </MudText>
+            </MudTimelineItem>
+        </MudTimeline>
+    </div>
+</div>
+
+<!-- Contribution Guidelines -->
+<div class="mud-container mud-container-maxwidth-lg mb-16 px-8">
+    <MudText Typo="Typo.h4" Align="Align.Center" Class="mb-2">Contribution Guidelines</MudText>
+    <MudText Typo="Typo.body1" Align="Align.Center" Class="mb-10">To ensure a smooth contribution experience, please follow these guidelines</MudText>
+    
+    <div class="mud-grid">
+        <div class="mud-grid-item mud-grid-item-xs-12 mud-grid-item-sm-6">
+            <div class="mud-paper mud-elevation-2 pa-6 h-100">
+                <MudText Typo="Typo.h6" Color="Color.Primary" Class="mb-4">For Code Contributions</MudText>
+                
+                <div class="d-flex align-center mb-3">
+                    <MudIcon Icon="@Icons.Material.Filled.Check" Color="Color.Success" Class="mr-3" />
+                    <MudText>Follow C# coding conventions and style guidelines</MudText>
+                </div>
+                
+                <div class="d-flex align-center mb-3">
+                    <MudIcon Icon="@Icons.Material.Filled.Check" Color="Color.Success" Class="mr-3" />
+                    <MudText>Write clear, maintainable, and documented code</MudText>
+                </div>
+                
+                <div class="d-flex align-center mb-3">
+                    <MudIcon Icon="@Icons.Material.Filled.Check" Color="Color.Success" Class="mr-3" />
+                    <MudText>Include appropriate tests for new features</MudText>
+                </div>
+                
+                <div class="d-flex align-center mb-3">
+                    <MudIcon Icon="@Icons.Material.Filled.Check" Color="Color.Success" Class="mr-3" />
+                    <MudText>Keep pull requests focused on a single feature or fix</MudText>
+                </div>
+                
+                <div class="d-flex align-center mb-3">
+                    <MudIcon Icon="@Icons.Material.Filled.Check" Color="Color.Success" Class="mr-3" />
+                    <MudText>Update documentation to reflect code changes</MudText>
+                </div>
+            </div>
+        </div>
+        
+        <div class="mud-grid-item mud-grid-item-xs-12 mud-grid-item-sm-6">
+            <div class="mud-paper mud-elevation-2 pa-6 h-100">
+                <MudText Typo="Typo.h6" Color="Color.Secondary" Class="mb-4">For Custom Instructions</MudText>
+                
+                <div class="d-flex align-center mb-3">
+                    <MudIcon Icon="@Icons.Material.Filled.Check" Color="Color.Success" Class="mr-3" />
+                    <MudText>Provide clear, descriptive titles</MudText>
+                </div>
+                
+                <div class="d-flex align-center mb-3">
+                    <MudIcon Icon="@Icons.Material.Filled.Check" Color="Color.Success" Class="mr-3" />
+                    <MudText>Include detailed explanations of what the instruction does</MudText>
+                </div>
+                
+                <div class="d-flex align-center mb-3">
+                    <MudIcon Icon="@Icons.Material.Filled.Check" Color="Color.Success" Class="mr-3" />
+                    <MudText>Specify any language, framework, or domain specificity</MudText>
+                </div>
+                
+                <div class="d-flex align-center mb-3">
+                    <MudIcon Icon="@Icons.Material.Filled.Check" Color="Color.Success" Class="mr-3" />
+                    <MudText>Test your instructions with GitHub Copilot before submitting</MudText>
+                </div>
+                
+                <div class="d-flex align-center mb-3">
+                    <MudIcon Icon="@Icons.Material.Filled.Check" Color="Color.Success" Class="mr-3" />
+                    <MudText>Follow the issue template when submitting</MudText>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- CTA Section -->
+<div class="mud-container mud-container-maxwidth-lg mb-16 px-8">
+    <div class="mud-paper mud-elevation-3 pa-10 text-center" style="background: linear-gradient(135deg, var(--mud-palette-info-lighten) 0%, var(--mud-palette-info) 100%); border-radius: 16px;">
+        <MudText Typo="Typo.h4" Color="Color.Surface" Class="mb-4">Ready to Contribute?</MudText>
+        <MudText Color="Color.Surface" Class="mb-6">
+            Join our growing community of contributors and help make GitHub Copilot even more powerful with custom instructions.
+        </MudText>
+        
+        <div class="d-flex justify-center gap-4">
+            <MudButton Variant="Variant.Filled" Color="Color.Dark" Size="Size.Large" 
+                       Target="_blank"
+                       Href="https://github.com/kasuken/copilotinstructions"
+                       StartIcon="@Icons.Custom.Brands.GitHub">
+                View on GitHub
+            </MudButton>
+            
+            <MudButton Variant="Variant.Filled" Color="Color.Primary" Size="Size.Large" 
+                       Href="/add"
+                       StartIcon="@Icons.Material.Filled.Add">
+                Add Instruction
+            </MudButton>
+        </div>
+    </div>
+</div>
+
+<style>
+    .mud-timeline-item-opposite {
+        flex: 0.1;
+    }
+    
+    .gap-4 {
+        gap: 1rem;
+    }
+</style>

@@ -1,0 +1,152 @@
+﻿@page "/"
+@using CopilotInstructions.Web.Components.Dialogs
+@inject ICopilotInstructionsService InstructionsService
+@inject IDialogService DialogService
+
+<PageTitle>Copilot Instructions</PageTitle>
+
+<!-- Search Box -->
+<MudPaper Elevation="0" Class="d-flex justify-center mb-6 mt-6">
+    <MudGrid Style="max-width: 800px; margin: auto">
+        <MudItem xs="12">
+            <MudTextField @bind-Value="@_searchTerm"
+                          Label="Search Custom Instructions"
+                          Variant="Variant.Outlined"
+                          Adornment="Adornment.End"
+                          AdornmentIcon="@Icons.Material.Filled.Search"
+                          Class="mt-0 mb-1" />
+        </MudItem>
+        <MudItem xs="12" Class="d-flex justify-center">
+            <MudButton Variant="Variant.Filled"
+                       Color="Color.Primary"
+                       Size="Size.Medium"
+                       StartIcon="@Icons.Material.Filled.Search"
+                       OnClick="PerformSearch"
+                       Class="px-12 mb-6">
+                Search
+            </MudButton>
+        </MudItem>
+    </MudGrid>
+</MudPaper>
+
+@if (_loading)
+{
+    <MudProgressLinear Color="Color.Primary" Indeterminate="true" Class="my-7" />
+}
+else if (_error != null)
+{
+    <MudAlert Severity="Severity.Error" Class="my-4">@_error</MudAlert>
+}
+else if (_filteredInstructions == null || !_filteredInstructions.Any())
+{
+    <MudAlert Severity="Severity.Info" Class="my-4">No matching instructions found.</MudAlert>
+}
+else
+{
+    <MudGrid>
+        @foreach (var instruction in _filteredInstructions)
+        {
+            <MudItem xs="12" sm="6" md="3">
+                <MudCard Elevation="3" Class="h-100">
+                    <MudCardHeader>
+                        <CardHeaderContent>
+                            <MudText Typo="Typo.h6" Inline="true" Color="Color.Primary">@instruction.Title</MudText>
+                        </CardHeaderContent>
+                        <CardHeaderActions>
+                            <MudTooltip>
+                                <ChildContent>
+                                    <MudIcon Icon="@Icons.Material.Filled.CalendarToday" />
+                                </ChildContent>
+                                <TooltipContent>
+                                    <MudText>Created on @instruction.Date</MudText>
+                                </TooltipContent>
+                            </MudTooltip>
+                        </CardHeaderActions>
+                    </MudCardHeader>
+                    <MudDivider />
+                    <MudCardContent>
+                        <MudText Typo="Typo.body2" Class="mud-text-secondary">
+                            @((instruction.Description.Length > 200)
+                                                ? instruction.Description.Substring(0, 200) + "..."
+                                                : instruction.Description)
+                </MudText>
+            </MudCardContent>
+            <MudCardActions>
+                @if (!string.IsNullOrEmpty(instruction.Author))
+                        {
+                            <MudText Typo="Typo.caption" Color="Color.Secondary">
+                                <MudIcon Icon="@Icons.Material.Filled.Person" Size="Size.Small" Class="mr-1" />
+                                @instruction.Author
+                            </MudText>
+                        }
+                        <MudSpacer />
+                        <MudButton Variant="Variant.Text" Color="Color.Primary" Size="Size.Small"
+                                   @onclick="@(() => OpenInstructionDetails(instruction))">View Details</MudButton>
+                    </MudCardActions>
+                </MudCard>
+            </MudItem>
+        }
+    </MudGrid>
+}
+
+@code {
+    private IEnumerable<CopilotInstruction>? _instructions;
+    private IEnumerable<CopilotInstruction>? _filteredInstructions;
+    private string _searchTerm = string.Empty;
+    private bool _loading = true;
+    private string? _error;
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            _loading = true;
+            _instructions = await InstructionsService.GetCopilotInstructionsAsync();
+            _filteredInstructions = _instructions; // Initially show all instructions
+        }
+        catch (Exception ex)
+        {
+            _error = $"Error loading instructions: {ex.Message}";
+        }
+        finally
+        {
+            _loading = false;
+        }
+    }
+
+    private void PerformSearch()
+    {
+        if (string.IsNullOrWhiteSpace(_searchTerm))
+        {
+            // If search term is empty, show all instructions
+            _filteredInstructions = _instructions;
+            return;
+        }
+
+        // Filter instructions based on search term
+        _filteredInstructions = _instructions?
+            .Where(i =>
+                (i.Title?.Contains(_searchTerm, StringComparison.OrdinalIgnoreCase) ?? false) ||
+                (i.Description?.Contains(_searchTerm, StringComparison.OrdinalIgnoreCase) ?? false) ||
+                (i.Author?.Contains(_searchTerm, StringComparison.OrdinalIgnoreCase) ?? false))
+            .ToList();
+    }
+
+    private Task OpenInstructionDetails(CopilotInstruction instruction)
+    {
+        var parameters = new DialogParameters
+        {
+            ["Instruction"] = instruction
+        };
+
+        var options = new DialogOptions
+        {
+            CloseButton = true,
+            MaxWidth = MaxWidth.Medium,
+            FullWidth = true,
+            NoHeader = false
+        };
+
+        return DialogService.ShowAsync<InstructionDetailsDialog>(instruction.Title, parameters, options);
+    }
+}

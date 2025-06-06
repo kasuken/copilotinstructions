@@ -1,0 +1,276 @@
+@page "/add"
+@rendermode InteractiveServer
+
+<PageTitle>Add Custom Instruction</PageTitle>
+
+<!-- Hero Section -->
+<div class="mud-container mud-container-maxwidth-lg mt-8 mb-16 px-8">
+    <div class="mud-paper mud-elevation-0 pa-8" style="background: linear-gradient(135deg, var(--mud-palette-secondary-lighten) 0%, var(--mud-palette-secondary) 100%); border-radius: 16px;">
+        <MudText Typo="Typo.h2" Align="Align.Center" Color="Color.Surface" Class="fw-bold">Share Your Custom Instructions</MudText>
+        <MudText Typo="Typo.h5" Align="Align.Center" Color="Color.Surface" Class="mb-8">Help other developers harness the full power of GitHub Copilot</MudText>
+        
+        <div class="mud-grid d-flex justify-center">
+            <div class="mud-grid-item mud-grid-item-xs-12 mud-grid-item-sm-8 mud-grid-item-md-6">
+                <MudText Align="Align.Center" Color="Color.Surface">
+                    We welcome contributions to our collection of GitHub Copilot custom instructions.
+                    Your expertise helps the entire developer community write better code with AI assistance.
+                </MudText>
+            </div>
+        </div>
+        
+        <div class="d-flex justify-center mt-6">
+            <MudButton Variant="Variant.Filled" Color="Color.Dark" Size="Size.Large" 
+                     Target="_blank"
+                     Href="https://github.com/kasuken/copilotinstructions/issues/new/choose"
+                     StartIcon="@Icons.Custom.Brands.GitHub">
+                Submit on GitHub
+            </MudButton>
+        </div>
+    </div>
+</div>
+
+<!-- Instructions Process -->
+<div class="mud-container mud-container-maxwidth-lg mb-16 px-8">
+    <MudText Typo="Typo.h4" Align="Align.Center" Class="mb-2">How to Submit a Custom Instruction</MudText>
+    <MudText Typo="Typo.body1" Align="Align.Center" Class="mb-10">Follow these steps to contribute your custom instructions to our collection</MudText>
+    
+    <div class="mud-paper pa-6 mud-elevation-3">
+        <MudTimeline>
+            <MudTimelineItem Color="Color.Primary" Size="Size.Medium" Icon="@Icons.Custom.Brands.GitHub">
+                <ItemContent>
+                    <MudText Typo="Typo.h6" Color="Color.Primary">Go to our GitHub Repository</MudText>
+                    <MudText Typo="Typo.body1" Class="mb-4">
+                        Visit the <MudLink Href="https://github.com/kasuken/copilotinstructions" Target="_blank">GitHub repository</MudLink> where we maintain our collection of custom instructions.
+                    </MudText>
+                </ItemContent>
+            </MudTimelineItem>
+            
+            <MudTimelineItem Color="Color.Secondary" Size="Size.Medium" Icon="@Icons.Material.Filled.Add">
+                <ItemContent>
+                    <MudText Typo="Typo.h6" Color="Color.Secondary">Create a New Issue</MudText>
+                    <MudText Typo="Typo.body1" Class="mb-4">
+                        Click on the "Issues" tab and then click the "New issue" button to start the submission process.
+                    </MudText>
+                </ItemContent>
+            </MudTimelineItem>
+            
+            <MudTimelineItem Color="Color.Info" Size="Size.Medium" Icon="@Icons.Material.Filled.ListAlt">
+                <ItemContent>
+                    <MudText Typo="Typo.h6" Color="Color.Info">Choose the Appropriate Template</MudText>
+                    <MudText Typo="Typo.body1" Class="mb-4">
+                        Select one of the available templates:
+                    </MudText>
+                    <div class="ml-3 mb-3">
+                        <div class="d-flex align-center mb-2">
+                            <MudAvatar Color="Color.Info" Size="Size.Small" Class="mr-2">
+                                <MudIcon Icon="@Icons.Material.Filled.Code" />
+                            </MudAvatar>
+                            <div>
+                                <MudText Typo="Typo.body1"><b>"Custom Instruction"</b></MudText>
+                                <MudText Typo="Typo.caption">For general Copilot instructions</MudText>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ml-3">
+                        <div class="d-flex align-center mb-2">
+                            <MudAvatar Color="Color.Info" Size="Size.Small" Class="mr-2">
+                                <MudIcon Icon="@Icons.Material.Filled.Commit" />
+                            </MudAvatar>
+                            <div>
+                                <MudText Typo="Typo.body1"><b>"Commit Instruction"</b></MudText>
+                                <MudText Typo="Typo.caption">For commit-related instructions (coming soon)</MudText>
+                            </div>
+                        </div>
+                    </div>
+                </ItemContent>
+            </MudTimelineItem>
+            
+            <MudTimelineItem Color="Color.Success" Size="Size.Medium" Icon="@Icons.Material.Filled.Edit">
+                <ItemContent>
+                    <MudText Typo="Typo.h6" Color="Color.Success">Fill Out the Template</MudText>
+                    <MudText Typo="Typo.body1" Class="mb-4">
+                        Complete the template with your custom instruction details. Be sure to include:
+                    </MudText>
+                    <div class="ml-3">
+                        <div class="d-flex align-center mb-2">
+                            <MudIcon Icon="@Icons.Material.Filled.Title" Color="Color.Success" Class="mr-2" />
+                            <MudText>A descriptive title</MudText>
+                        </div>
+                        <div class="d-flex align-center mb-2">
+                            <MudIcon Icon="@Icons.Material.Filled.Description" Color="Color.Success" Class="mr-2" />
+                            <MudText>The full text of your instruction</MudText>
+                        </div>
+                        <div class="d-flex align-center mb-2">
+                            <MudIcon Icon="@Icons.Material.Filled.Label" Color="Color.Success" Class="mr-2" />
+                            <MudText>Appropriate tags/categories</MudText>
+                        </div>
+                        <div class="d-flex align-center">
+                            <MudIcon Icon="@Icons.Material.Filled.Info" Color="Color.Success" Class="mr-2" />
+                            <MudText>Any additional context or examples</MudText>
+                        </div>
+                    </div>
+                </ItemContent>
+            </MudTimelineItem>
+            
+            <MudTimelineItem Color="Color.Warning" Size="Size.Medium" Icon="@Icons.Material.Filled.Send">
+                <ItemContent>
+                    <MudText Typo="Typo.h6" Color="Color.Warning">Submit Your Issue</MudText>
+                    <MudText Typo="Typo.body1" Class="mb-4">
+                        Click the "Submit new issue" button to send your custom instruction for review.
+                    </MudText>
+                </ItemContent>
+            </MudTimelineItem>
+            
+            <MudTimelineItem Color="Color.Dark" Size="Size.Medium" Icon="@Icons.Material.Filled.CheckCircle">
+                <ItemContent>
+                    <MudText Typo="Typo.h6">Await Approval</MudText>
+                    <MudText Typo="Typo.body1" Class="mb-4">
+                        A project maintainer will review your submission. Once approved, it will appear in our collection of custom instructions.
+                    </MudText>
+                </ItemContent>
+            </MudTimelineItem>
+        </MudTimeline>
+    </div>
+</div>
+
+<!-- Guidelines Section -->
+<div class="mud-container mud-container-maxwidth-lg mb-16 px-8">
+    <div class="mud-paper mud-elevation-2 pa-6" style="background: linear-gradient(to right, var(--mud-palette-surface) 0%, var(--mud-palette-surface-lighten) 100%); border-radius: 12px;">
+        <MudText Typo="Typo.h4" Align="Align.Center" Class="mb-4">Guidelines for Effective Custom Instructions</MudText>
+        
+        <MudGrid>
+            <MudItem xs="12" sm="6">
+                <div class="mb-4">
+                    <div class="d-flex align-center mb-2">
+                        <MudAvatar Color="Color.Success" Size="Size.Medium" Class="mr-3">
+                            <MudIcon Icon="@Icons.Material.Filled.RocketLaunch" />
+                        </MudAvatar>
+                        <MudText Typo="Typo.h6">Write with Intent</MudText>
+                    </div>
+                    <div class="ml-9 mt-2">
+                        <div class="d-flex align-center mb-2">
+                            <MudIcon Icon="@Icons.Material.Filled.CheckCircle" Color="Color.Success" Class="mr-2" Size="Size.Small" />
+                            <MudText>Be clear and specific about your requirements</MudText>
+                        </div>
+                        <div class="d-flex align-center mb-2">
+                            <MudIcon Icon="@Icons.Material.Filled.CheckCircle" Color="Color.Success" Class="mr-2" Size="Size.Small" />
+                            <MudText>Keep instructions focused on a specific use case</MudText>
+                        </div>
+                    </div>
+                </div>
+            </MudItem>
+            
+            <MudItem xs="12" sm="6">
+                <div class="mb-4">
+                    <div class="d-flex align-center mb-2">
+                        <MudAvatar Color="Color.Info" Size="Size.Medium" Class="mr-3">
+                            <MudIcon Icon="@Icons.Material.Filled.Settings" />
+                        </MudAvatar>
+                        <MudText Typo="Typo.h6">Provide Context</MudText>
+                    </div>
+                    <div class="ml-9 mt-2">
+                        <div class="d-flex align-center mb-2">
+                            <MudIcon Icon="@Icons.Material.Filled.CheckCircle" Color="Color.Success" Class="mr-2" Size="Size.Small" />
+                            <MudText>Include your coding preferences and patterns</MudText>
+                        </div>
+                        <div class="d-flex align-center mb-2">
+                            <MudIcon Icon="@Icons.Material.Filled.CheckCircle" Color="Color.Success" Class="mr-2" Size="Size.Small" />
+                            <MudText>Mention frameworks, style guides, or patterns you follow</MudText>
+                        </div>
+                    </div>
+                </div>
+            </MudItem>
+            
+            <MudItem xs="12" sm="6">
+                <div class="mb-4">
+                    <div class="d-flex align-center mb-2">
+                        <MudAvatar Color="Color.Warning" Size="Size.Medium" Class="mr-3">
+                            <MudIcon Icon="@Icons.Material.Filled.Code" />
+                        </MudAvatar>
+                        <MudText Typo="Typo.h6">Show Examples</MudText>
+                    </div>
+                    <div class="ml-9 mt-2">
+                        <div class="d-flex align-center mb-2">
+                            <MudIcon Icon="@Icons.Material.Filled.CheckCircle" Color="Color.Success" Class="mr-2" Size="Size.Small" />
+                            <MudText>Include examples if they help clarify your instruction</MudText>
+                        </div>
+                        <div class="d-flex align-center mb-2">
+                            <MudIcon Icon="@Icons.Material.Filled.CheckCircle" Color="Color.Success" Class="mr-2" Size="Size.Small" />
+                            <MudText>Demonstrate before/after scenarios to show impact</MudText>
+                        </div>
+                    </div>
+                </div>
+            </MudItem>
+            
+            <MudItem xs="12" sm="6">
+                <div class="mb-4">
+                    <div class="d-flex align-center mb-2">
+                        <MudAvatar Color="Color.Error" Size="Size.Medium" Class="mr-3">
+                            <MudIcon Icon="@Icons.Material.Filled.Psychology" />
+                        </MudAvatar>
+                        <MudText Typo="Typo.h6">Test Before Submitting</MudText>
+                    </div>
+                    <div class="ml-9 mt-2">
+                        <div class="d-flex align-center mb-2">
+                            <MudIcon Icon="@Icons.Material.Filled.CheckCircle" Color="Color.Success" Class="mr-2" Size="Size.Small" />
+                            <MudText>Test your instructions with GitHub Copilot</MudText>
+                        </div>
+                        <div class="d-flex align-center mb-2">
+                            <MudIcon Icon="@Icons.Material.Filled.CheckCircle" Color="Color.Success" Class="mr-2" Size="Size.Small" />
+                            <MudText>Refine based on actual results</MudText>
+                        </div>
+                    </div>
+                </div>
+            </MudItem>
+        </MudGrid>
+    </div>
+</div>
+
+<!-- Coming Soon Alert -->
+<div class="mud-container mud-container-maxwidth-lg mb-16 px-8">
+    <MudAlert Severity="Severity.Info" Variant="Variant.Filled" Class="mb-6">
+        <div class="d-flex align-center">
+            <MudIcon Icon="@Icons.Material.Filled.Construction" Class="mr-3" />
+            <MudText>Direct submission through this website is coming soon! For now, please follow the GitHub issue process described above.</MudText>
+        </div>
+    </MudAlert>
+</div>
+
+<!-- CTA Section -->
+<div class="mud-container mud-container-maxwidth-lg mb-16 px-8">
+    <div class="mud-paper mud-elevation-3 pa-10 text-center" style="background: linear-gradient(135deg, var(--mud-palette-secondary-lighten) 0%, var(--mud-palette-secondary) 100%); border-radius: 16px;">
+        <MudText Typo="Typo.h4" Color="Color.Surface" Class="mb-4">Ready to Share Your Instructions?</MudText>
+        <MudText Color="Color.Surface" Class="mb-6">
+            Your contribution could help countless developers write better code with AI assistance.
+        </MudText>
+        
+        <div class="d-flex justify-center gap-4">
+            <MudButton Variant="Variant.Filled" Color="Color.Dark" Size="Size.Large" 
+                       Href="/"
+                       StartIcon="@Icons.Material.Filled.ArrowBack">
+                Back to Home
+            </MudButton>
+            
+            <MudButton Variant="Variant.Filled" Color="Color.Primary" Size="Size.Large" 
+                       Target="_blank"
+                       Href="https://github.com/kasuken/copilotinstructions/issues/new/choose"
+                       StartIcon="@Icons.Custom.Brands.GitHub">
+                Submit an Instruction
+            </MudButton>
+        </div>
+    </div>
+</div>
+
+<style>
+    .mud-timeline-item-opposite {
+        flex: 0.1;
+    }
+    
+    .gap-4 {
+        gap: 1rem;
+    }
+    
+    .ml-9 {
+        margin-left: 4.5rem;
+    }
+</style>
