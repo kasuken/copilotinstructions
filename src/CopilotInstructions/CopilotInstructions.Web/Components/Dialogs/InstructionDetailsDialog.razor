@@ -1,0 +1,110 @@
+@using CopilotInstructions.Web.Models
+@using MudBlazor
+@inject IJSRuntime JSRuntime
+@inject ISnackbar Snackbar
+
+<MudDialog>
+    <DialogContent>
+        <MudContainer Style="max-height: 400px; overflow-y: auto">
+            
+            <MudText Typo="Typo.body1" Class="mb-4">@((MarkupString)FormatDescription(Instruction.Description))</MudText>
+            
+            <MudDivider Class="my-4" />
+            
+            <MudText Typo="Typo.subtitle2" Color="Color.Primary" Class="mb-2">Author Information</MudText>
+            
+            <MudGrid>
+                <MudItem xs="12" Class="d-flex align-center">
+                    <MudIcon Icon="@Icons.Material.Filled.Person" Class="mr-2" />
+                    <MudText Typo="Typo.body2">@(string.IsNullOrEmpty(Instruction.Author) ? "Unknown" : Instruction.Author)</MudText>
+                </MudItem>
+                
+                @if (!string.IsNullOrEmpty(Instruction.Email))
+                {
+                    <MudItem xs="12" Class="d-flex align-center">
+                        <MudIcon Icon="@Icons.Material.Filled.Email" Class="mr-2" />
+                        <MudText Typo="Typo.body2">@Instruction.Email</MudText>
+                    </MudItem>
+                }
+                
+                <MudItem xs="12" Class="d-flex align-center">
+                    <MudIcon Icon="@Icons.Material.Filled.CalendarToday" Class="mr-2" />
+                    <MudText Typo="Typo.body2">@(string.IsNullOrEmpty(Instruction.Date) ? "Unknown date" : $"Created on {Instruction.Date}")</MudText>
+                </MudItem>
+            </MudGrid>
+        </MudContainer>
+    </DialogContent>
+    <DialogActions>
+        <MudTooltip Text="Copy instruction to clipboard">
+            <MudButton 
+                Variant="Variant.Filled" 
+                Color="Color.Secondary" 
+                StartIcon="@Icons.Material.Filled.ContentCopy" 
+                OnClick="CopyToClipboard"
+                Disabled="@_copyingInProgress">
+                @if (_copyingInProgress)
+                {
+                    <MudProgressCircular Class="ms-n1" Size="Size.Small" Indeterminate="true" />
+                    <span class="ms-2">Copying...</span>
+                }
+                else
+                {
+                    <span>Copy</span>
+                }
+            </MudButton>
+        </MudTooltip>
+    </DialogActions>
+</MudDialog>
+
+@code {
+    [CascadingParameter] 
+    private IMudDialogInstance MudDialog { get; set; }
+
+    [Parameter] public CopilotInstruction Instruction { get; set; } = new();
+    [Parameter] public EventCallback OnClose { get; set; }
+
+    private bool _copyingInProgress = false;
+
+    private async Task CopyToClipboard()
+    {
+        try
+        {
+            _copyingInProgress = true;
+            StateHasChanged();
+            
+            // Format the content to be copied
+            string contentToCopy = $"# {Instruction.Title}\n\n{Instruction.Description}";
+            
+            // Use JSRuntime to copy to clipboard
+            await JSRuntime.InvokeVoidAsync("navigator.clipboard.writeText", contentToCopy);
+            
+            // Show success notification
+            Snackbar.Add("Instruction copied to clipboard!", Severity.Success, config => 
+            { 
+                config.Icon = Icons.Material.Filled.Check;
+                config.VisibleStateDuration = 2000;
+            });
+        }
+        catch (Exception ex)
+        {
+            // Show error notification
+            Snackbar.Add($"Failed to copy to clipboard: {ex.Message}", Severity.Error);
+        }
+        finally
+        {
+            _copyingInProgress = false;
+            StateHasChanged();
+        }
+    }
+
+    private string FormatDescription(string description)
+    {
+        if (string.IsNullOrEmpty(description))
+            return string.Empty;
+            
+        // Convert line breaks to HTML breaks for better formatting
+        return description
+            .Replace("\r\n", "<br />")
+            .Replace("\n", "<br />");
+    }
+}
